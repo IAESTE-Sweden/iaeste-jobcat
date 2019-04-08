@@ -1,14 +1,14 @@
 module Json exposing (..)
 
 import Types exposing (..)
-import Json.Decode exposing (..)
+import Json.Decode as Decode exposing (..)
 import Json.Decode.Pipeline exposing (decode, required, optional, custom, hardcoded, resolve)
 
 
 jobDecoder : Decoder Job
 jobDecoder =
     decode Job
-        |> optional "Ref.No" string "N/A"
+        |> optional "RefNo" string "N/A"
         |> optional "Country" string "N/A"
         |> optional "Workplace" string "N/A"
         |> optional "Business" string "N/A"
